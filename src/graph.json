@@ -291,6 +291,171 @@
 			"font": {
 				"align": "middle"
 			}
+		},
+		{
+			"from": "Premier",
+			"to": "Clen vlady",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "Vymenovava",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister vnutra",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister spravodlivosti",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister financii",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister hospodarstva",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister obrany",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister dopravy a vystavby",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister podohospodarstva a rozvoja vidieka",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister zahranicnych veci a europskych zalezitosti",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister prace, socialnych veci a rodiny",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister zivotneho prostredia",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister skolstva, vedy, vyskumu a sportu",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister kultury",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Clen vlady",
+			"to": "Minister zdravotnictva",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "je",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
+		},
+		{
+			"from": "Premier",
+			"to": "Vlada",
+			"splines": "curved",
+			"labelloc": "c",
+			"label": "Zvolava schodze",
+			"arrows": "to",
+			"font": {
+				"align": "middle"
+			}
 		}
 	]
 }

@@ -24,35 +24,26 @@
 
 		<script type="text/javascript">
 
-const data = {"nodes":[{"id":"Premier","label":"Predseda vlady SR","color":{"border":"gray","background":"gray"}},{"id":"Minister vnutra","label":"Minister vnutra","color":{"border":"gray","background":"gray"}},{"id":"Minister spravodlivosti","label":"Minister spravodlivosti","color":{"border":"gray","background":"gray"}},{"id":"Minister financii","label":"Minister financii","color":{"border":"gray","background":"gray"}},{"id":"Minister hospodarstva","label":"Minister hospodarstva","color":{"border":"gray","background":"gray"}},{"id":"Minister obrany","label":"Minister obrany","color":{"border":"gray","background":"gray"}},{"id":"Minister dopravy a vystavby","label":"Minister dopravy a vystavby","color":{"border":"gray","background":"gray"}},{"id":"Minister podohospodarstva a rozvoja vidieka","label":"Minister podohospodarstva a rozvoja vidieka","color":{"border":"gray","background":"gray"}},{"id":"Minister zahranicnych veci a europskych zalezitosti","label":"Minister zahranicnych veci a europskych zalezitosti","color":{"border":"gray","background":"gray"}},{"id":"Minister prace, socialnych veci a rodiny","label":"Minister prace, socialnych veci a rodiny","color":{"border":"gray","background":"gray"}},{"id":"Minister zivotneho prostredia","label":"Minister zivotneho prostredia","color":{"border":"gray","background":"gray"}},{"id":"Minister skolstva, vedy, vyskumu a sportu","label":"Minister skolstva, vedy, vyskumu a sportu","color":{"border":"gray","background":"gray"}},{"id":"Minister kultury","label":"Minister kultury","color":{"border":"gray","background":"gray"}},{"id":"Minister zdravotnictva","label":"Minister zdravotnictva","color":{"border":"gray","background":"gray"}},{"id":"Prezident","label":"Prezident","shape":"oval"},{"id":"Clen vlady","label":"Clen vlady","shape":"oval"},{"id":"Zakony","label":"Zakony","shape":"box"},{"id":"Narod","label":"Narod","shape":"box"},{"id":"NRSR","label":"NRSR","shape":"box"},{"id":"Vlada","label":"Vlada","shape":"box"},{"id":"Najvyssi kontrolny urad","label":"Najvyssi kontrolny urad","shape":"box"}],"edges":[{"from":"Prezident","to":"Premier","splines":"curved","labelloc":"c","label":"vymenovava","arrows":"to","font":{"align":"middle"}},{"from":"Prezident","to":"Zakony","splines":"curved","labelloc":"c","label":"podpisuje","arrows":"to","font":{"align":"middle"}},{"from":"Narod","to":"NRSR","splines":"curved","labelloc":"c","label":"voli","rank":10,"arrows":"to","font":{"align":"middle"}},{"from":"Narod","to":"Prezident","splines":"curved","labelloc":"c","label":"voli","rank":10,"arrows":"to","font":{"align":"middle"}},{"from":"NRSR","to":"Vlada","splines":"curved","labelloc":"c","label":"moze vyslovit nedoveru","URL":"https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-1","arrows":"to","font":{"align":"middle"}},{"from":"Vlada","to":"NRSR","splines":"curved","labelloc":"c","label":"sa zodpoveda","URL":"https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-1","arrows":"to","font":{"align":"middle"}},{"from":"Vlada","to":"NRSR","splines":"curved","labelloc":"c","label":"moze poziadat o vyslovenie dovery","URL":"https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-2","arrows":"to","font":{"align":"middle"}},{"from":"Vlada","to":"NRSR","splines":"curved","labelloc":"c","label":"moze spojit hlasovanie s hlasovanim o dovere","URL":"https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-2","arrows":"to","font":{"align":"middle"}},{"from":"Clen vlady","to":"Prezident","splines":"curved","labelloc":"c","label":"podava demisiu","arrows":"to","font":{"align":"middle"}},{"from":"NRSR","to":"Najvyssi kontrolny urad","splines":"curved","labelloc":"c","label":"voli a odvolava","arrows":"to","font":{"align":"middle"}},{"from":"Prezident","to":"NRSR","splines":"curved","labelloc":"c","label":"Zvolava ustanovujucu schodzu","arrows":"to","font":{"align":"middle"}}],"options":{}}
-
-
-
-
 // add http://visjs.org/examples/network/other/clusteringByZoom.html
 
 			async function doIt(){
 
-				const graphApi = fetch("/src/graph.dot")
-				const dotString = await graphApi.then(x => x.text());
+				const graphApi = fetch("/src/graph.json")
 
 				// create a network
 				var container = document.getElementById('mynetwork');
 
-				const parsedData = vis.network.convertDot(dotString);
-				var data = parsedData;
+				var data = await graphApi.then(x => x.json());
 
-				data.edges.forEach(x => x.font = {align: "middle"});
-
-console.dir(data)
-console.log(JSON.stringify(data))
 				var options = {
 					layout: {
 						//randomSeed: 340035,
 						hierarchical: {
-							enabled: false,
-							direction: "DU",
+							enabled: true,
 							edgeMinimization: false,
+							blockShifting: true,
+							//levelSeparation: true,	
+							parentCentralization: true,
 						}
 					},
 					physics: {
@@ -66,8 +57,6 @@ console.log(JSON.stringify(data))
 					}
 				};
 
-				console.dir(data.edges);
-				//data.edges.forEach(x => x.
 				var network = new vis.Network(container, data, options);
 			}
 			doIt();
