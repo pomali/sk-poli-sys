@@ -26,7 +26,7 @@ module.exports = {
     "watchOptions": {
         "ignoreInitial": true
     },
-    "server": false,
+    "server": true,
     "proxy": false,
     "port": 3000,
     "middleware": false,
@@ -64,7 +64,7 @@ module.exports = {
     "reloadThrottle": 0,
     "plugins": [],
     "injectChanges": true,
-    "startPath": null,
+    "startPath": "src",
     "minify": true,
     "host": null,
     "localOnly": false,
