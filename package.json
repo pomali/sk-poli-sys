@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "vis": "^4.21.0"
+  }
+}

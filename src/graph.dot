@@ -1,0 +1,44 @@
+digraph {
+
+  subgraph Vlada{
+    rank=same;
+    node [style=filled, color=gray];
+    edge [style=filled, color=gray];
+    style=filled;
+    color=lightgray;
+		Premier[label="Predseda vlady SR"]
+    Premier ->  {
+      "Minister vnutra"
+        "Minister spravodlivosti"
+        "Minister financii"
+        "Minister hospodarstva"
+        "Minister obrany"
+        "Minister dopravy a vystavby"
+        "Minister podohospodarstva a rozvoja vidieka"
+        "Minister zahranicnych veci a europskych zalezitosti"
+        "Minister prace, socialnych veci a rodiny"
+        "Minister zivotneho prostredia"
+        "Minister skolstva, vedy, vyskumu a sportu"
+        "Minister kultury"
+        "Minister zdravotnictva"
+    };
+  }
+
+  //node [nodesep=5.0, fontsize=20, shape=box];
+  node [shape=box];
+edge[splines=curved, labelloc=c];
+Prezident[shape=oval];
+"Clen vlady"[shape=oval];
+
+  Prezident -> Premier[label=vymenovava];
+  Prezident -> Zakony [label=podpisuje];
+  Narod -> {NRSR Prezident} [label=voli, rank=10];
+  NRSR -> Vlada [label="moze vyslovit nedoveru", URL="https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-1"];
+  Vlada -> NRSR [label="sa zodpoveda",URL="https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-1"];
+  Vlada -> NRSR [label="moze poziadat o vyslovenie dovery", URL="https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-2"];
+  Vlada -> NRSR [label="moze spojit hlasovanie s hlasovanim o dovere", URL="https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1992/460/#ustavnyclanok-114.odsek-2"];
+  "Clen vlady" -> Prezident [label="podava demisiu"];
+  NRSR -> "Najvyssi kontrolny urad" [label="voli a odvolava"]
+    Prezident -> NRSR [label="Zvolava ustanovujucu schodzu"]
+
+}
